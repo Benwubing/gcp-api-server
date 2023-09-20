@@ -5,7 +5,7 @@ info:
   description: API to retrieve projects, resources, roles, and permissions in Google Cloud Platform (GCP)
 
 servers:
-  - url: https://nodejs-production-a953.up.railway.app
+  - url: https://nodejs-production-a953.up.railway.app/
     description: API to retrieve projects, resources, roles, and permissions in Google Cloud Platform (GCP)
 
 paths:
