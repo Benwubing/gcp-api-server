@@ -11,6 +11,14 @@ servers:
 paths:
   /projects:
     get:
+      # A list of tags to logical group operations by resources and any other
+      # qualifier.
+      tags:
+        - gcp
+        - GCP
+        - projects
+        - project list
+        - all projects
       summary: List GCP Projects
       description: Retrieve a list of projects in Google Cloud Platform.
       responses:
@@ -26,6 +34,10 @@ paths:
 
   /projects/{projectId}/resources:
     get:
+      tags:
+        - resources
+        - project
+        - GCP resource
       summary: List Resources in a Project
       description: Retrieve a list of resources in a specific GCP project.
       parameters:
@@ -48,6 +60,12 @@ paths:
 
   /projects/{projectId}/resources/{resourceId}/roles:
     get:
+      tags:
+        - roles
+        - role
+        - GCP role
+        - permissions
+        - perms
       summary: List Roles for a Resource
       description: Retrieve a list of roles associated with a specific GCP resource.
       parameters:
