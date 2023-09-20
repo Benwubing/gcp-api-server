@@ -1,13 +1,18 @@
 {
-  "name": "nodejs-app",
+  "name": "gcp-api-server",
   "version": "1.0.0",
-  "description": "A minimal Node.js web application.",
+  "description": "",
   "main": "index.js",
-  "author": "alphasec",
-  "license": "MIT",
-   "dependencies": {
-  },
   "scripts": {
-    "start": "node index.js"
+     "start": "node node.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
   }
 }

@@ -1,0 +1,181 @@
+openapi: 3.0.3
+info:
+  title: GCP Project, Resource, and Role API
+  version: 1.0.0
+  description: API to retrieve projects, resources, roles, and permissions in Google Cloud Platform (GCP)
+
+servers:
+  - url: http://localhost:5000/
+    description: API to retrieve projects, resources, roles, and permissions in Google Cloud Platform (GCP)
+
+paths:
+  /projects:
+    get:
+      summary: List GCP Projects
+      description: Retrieve a list of projects in Google Cloud Platform.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProjectListResponse"
+
+      tags:
+        - Projects
+
+  /projects/{projectId}/resources:
+    get:
+      summary: List Resources in a Project
+      description: Retrieve a list of resources in a specific GCP project.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: The unique project ID.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResourceListResponse"
+
+      tags:
+        - Resources
+
+  /projects/{projectId}/resources/{resourceId}/roles:
+    get:
+      summary: List Roles for a Resource
+      description: Retrieve a list of roles associated with a specific GCP resource.
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: The unique project ID.
+          schema:
+            type: string
+        - name: resourceId
+          in: path
+          required: true
+          description: The unique resource ID.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoleListResponse"
+
+      tags:
+        - Roles
+
+components:
+  schemas:
+    ProjectListResponse:
+      type: object
+      properties:
+        projects:
+          type: array
+          items:
+            type: object
+            properties:
+              projectId:
+                type: string
+                description: The unique project ID.
+              projectName:
+                type: string
+                description: The name of the project.
+              projectNumber:
+                type: string
+                description: The project's number.
+              createTime:
+                type: string
+                format: date-time
+                description: The creation timestamp of the project
+      example:
+        projects:
+          - projectId: my-project-1
+            projectName: My Project 1
+            projectNumber: 123456789
+            createTime: "2023-09-20T10:00:00Z"
+          - projectId: my-project-2
+            projectName: My Project 2
+            projectNumber: 987654321
+            createTime: "2023-09-21T11:30:00Z"
+
+    ResourceListResponse:
+      type: object
+      properties:
+        resources:
+          type: array
+          items:
+            type: object
+            properties:
+              resourceId:
+                type: string
+                description: The unique resource ID.
+              resourceName:
+                type: string
+                description: The name of the resource.
+              resourceType:
+                type: string
+                description: The type of the resource (e.g., Compute Engine, BigQuery).
+      example:
+        resources:
+          - resourceId: instance-1
+            resourceName: My Compute Engine Instance 1
+            resourceType: Compute Engine
+          - resourceId: dataset-1
+            resourceName: My BigQuery Dataset 1
+            resourceType: BigQuery
+
+    RoleListResponse:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              roleName:
+                type: string
+                description: The name of the role.
+              roleDescription:
+                type: string
+                description: A description of the role.
+              permissions:
+                type: array
+                items:
+                  type: string
+                  description: A list of permissions associated with the role.
+      example:
+        roles:
+          - roleName: editor
+            roleDescription: Editor role
+            permissions:
+              - read
+              - write
+          - roleName: viewer
+            roleDescription: Viewer role
+            permissions:
+              - read
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: A brief error message.
+      example:
+        error: An error occurred while fetching data.
+
+tags:
+  - name: Projects
+  - name: Resources
+  - name: Roles
