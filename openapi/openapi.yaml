@@ -14,7 +14,7 @@ paths:
       summary: List GCP Projects
       description: Retrieve a list of projects in Google Cloud Platform.
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -36,7 +36,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -64,7 +64,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -164,8 +164,6 @@ components:
             roleDescription: Viewer role
             permissions:
               - read
-
-  schemas:
     Error:
       type: object
       properties:
