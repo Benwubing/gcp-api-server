@@ -9,6 +9,7 @@ servers:
     description: API to retrieve projects, resources, roles, and permissions in Google Cloud Platform (GCP)
 
 paths:
+  # Retrieve all projects
   /projects:
     get:
       # A list of tags to logical group operations by resources and any other
@@ -28,7 +29,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProjectListResponse"
-
+  # Retrieve resources for a specified project ID
   /projects/{projectId}/resources:
     get:
       tags:
@@ -37,6 +38,7 @@ paths:
         - GCP resource
       summary: List Resources in a Project
       description: Retrieve a list of resources in a specific GCP project.
+      operationId: getResourcesByProjectId
       parameters:
         - name: projectId
           in: path
@@ -62,6 +64,7 @@ paths:
         - perms
       summary: List Roles for a Resource
       description: Retrieve a list of roles associated with a specific GCP resource.
+      operationId: GetRolesByResourceIdByProjectId
       parameters:
         - name: projectId
           in: path
