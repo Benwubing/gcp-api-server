@@ -43,7 +43,7 @@ paths:
           required: true
           description: The unique project ID.
           schema:
-            type: integer
+            type: string
       responses:
         "200":
           description: Successful response
