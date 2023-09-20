@@ -4,6 +4,8 @@ const router = express.Router();
 router.get("/", (req, res) => {
   // Implement logic to retrieve a list of projects from GCP here
   // Example response:
+  console.log("Projects called");
+  console.log(req.params);
   const projects = [
     {
       projectId: "my-project-1",

@@ -6,6 +6,8 @@ router.get("/", (req, res) => {
 
   // Implement logic to retrieve a list of resources for the specified project from GCP here
   // Example response:
+  console.log("Resources called");
+  console.log(req.params);
   const resources = [
     {
       resourceId: "instance-1",

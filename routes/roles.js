@@ -7,6 +7,9 @@ router.get("/", (req, res) => {
 
   // Implement logic to retrieve a list of roles associated with the specified resource from GCP here
   // Example response:
+
+  console.log("Roles called");
+  console.log(req.params);
   const roles = [
     {
       roleName: "editor",
