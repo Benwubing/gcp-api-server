@@ -35,6 +35,12 @@ app.use(
   require("./routes/roles")
 );
 
+app.get("*", (req, res) => {
+  console.log(req.params);
+  console.log(req);
+  res.status(404).send("Page Not Found");
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
