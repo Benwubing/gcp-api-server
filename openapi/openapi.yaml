@@ -30,7 +30,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/ProjectListResponse"
   # Retrieve resources for a specified project ID
-  /projects/{projectId}/resources:
+  /projects//{projectId}/resources:
     get:
       tags:
         - resources
