@@ -49,14 +49,14 @@ router.get("/", (req, res) => {
   // Example response:
   const projects = [
     {
-      projectId: "my-project-1",
-      projectName: "My Project 1",
+      projectId: "p-gs-devops-dv",
+      projectName: "Production Devops",
       projectNumber: "123456789",
       createTime: "2023-09-20T10:00:00Z",
     },
     {
-      projectId: "my-project-2",
-      projectName: "My Project 2",
+      projectId: "d-ps-devops-pv",
+      projectName: "deveopment Devops",
       projectNumber: "987654321",
       createTime: "2023-09-21T11:30:00Z",
     },

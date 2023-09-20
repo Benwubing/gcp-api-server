@@ -29,11 +29,13 @@ router.get("/", (req, res) => {
   // Example response:
   const resources = [
     {
+      projectId: projectId,
       resourceId: "instance-1",
       resourceName: "My Compute Engine Instance 1",
       resourceType: "Compute Engine",
     },
     {
+      projectId: projectId,
       resourceId: "dataset-1",
       resourceName: "My BigQuery Dataset 1",
       resourceType: "BigQuery",

@@ -36,8 +36,8 @@ paths:
         - resources
         - project
         - GCP resource
-      summary: List Resources in a Project
-      description: Retrieve a list of resources in a specific GCP project.
+      summary: List Resources in a Project if with the given projectID
+      description: Retrieve a list of resources in a specific project.
       operationId: getResourcesByProjectId
       parameters:
         - name: projectId
