@@ -181,8 +181,3 @@ components:
           description: A brief error message.
       example:
         error: An error occurred while fetching data.
-
-tags:
-  - name: Projects
-  - name: Resources
-  - name: Roles
